@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 
+  📌 CSS 글꼴 관련 스타일 속성
+  1. font-family 
+    1) 텍스트에 적용할 글꼴(서체) 목록을 지정합니다. 
+    2) 여러 글꼴을 쉼표로 구분하여 지정할 수 있습니다. (앞에서부터 순서대로 사용자의 시스템에 설치된 글꼴을 적용)
+    3) 마지막에는 일반 글꼴 패밀리(serif, sans-serif, monospace, cursive, fantasy) 중 하나를 지정하는 것이 좋습니다. 
+        -------------------------------------------------------------
+        이름        | 설명
+        ------------|------------------------------------------------
+        serif       | 획이 있는 전통적인 글꼴(명조 계열) (예: Times)
+        sans-serif  | 획이 없는 현대적 글꼴(고딕 계열) (예: Arial)
+        monospace   | 고정폭 글꼴 (예: Courier)
+        cursive     | 손글씨 느낌의 글꼴
+        fantasy     | 장식적이고 독특한 글꼴
+        -------------------------------------------------------------
+  2. font-size
+    1) 텍스트의 크기를 지정합니다.
+    2) px, em, rem, %, pt 등 다양한 단위를 사용할 수 있습니다.
+  3. font-weight
+    1) 글꼴의 굵기를 지정합니다.
+    2) 100 ~ 900 사이의 숫자 값을 사용할 수 있습니다. (숫자가 클수록 굵어짐)
+    3) normal(400), bold(700), bolder, lighter 같은 키워드를 사용할 수 있습니다.
+  4. font-style
+    1) 이탤릭체(기울임) 스타일을 지정합니다.
+    2) normal, italic, oblique 값을 가집니다.
+  5. font-variant
+    1) 소문자를 대문자로 바꾸는 등 글꼴의 변형을 지정합니다.
+    2) 일반적으로 small-caps(스몰캡스)로 사용합니다. (소문자를 작은 대문자로 표시)
+  6. font (단축 속성)
+    1) 위의 여러 속성을 한 줄로 묶어 설정할 수 있는 shorthand 속성입니다.
+    2) 기본 순서: font-style font-variant font-weight font-size/line-height font-family
+    3) 필수: font-size와 font-family는 반드시 작성해야 합니다.
+    4) 주의: font-size와 line-height은 슬래시(/)로 구분해야 합니다.
+-->
+
+  <style>
+    #p1 {
+      font-family: 궁서체;
+      font-size: 2em;
+      font-weight: 900;
+    }
+    #p2 {
+      font-style: italic;
+      font-variant: small-caps;
+      font-family: "Dokdo"
+    }
+  </style>
+
+  <p id="p1">글꼴 Style Test1</p>
+  <p id="p2">글꼴 Style Test2</p>
+
+  <hr>
+
+  <style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+  </style>
+  
+  <i class="fa-solid fa-user fa-2x"></i>
+  <i class="fa-brands fa-apple fa-3x" style="color: lavender;" ></i>
+  <br>
+
+  <a href="https://github.com">
+    <i class="fa-brands fa-github fa-3x" style="color: black;"></i></a>
+
+    <input type="text">
+    <button><i class="fa-solid fa-skull"></i></button>
+
+</body>
+</html>
