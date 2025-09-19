@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <style>
+    .play * {
+      background-color: yellow;
+      margin: 10px;
+      width: 100px;
+      height: 100px;
+    }
+    .play>div {
+      display: inline;
+    }
+    .play>span {
+      display: block;
+    }
+    .class>div {
+      background-color: yellow;
+       margin: 10px;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+  <div class="play">
+    <div>블럭요소</div>
+    <span>인라인요소</span>
+  </div>
+
+  <hr>
+
+  <style>
+    .class>div {
+      display: inline-block;
+    }
+  </style>
+
+  <div class="class">
+    <div>블록요소</div>
+    <div>블록요소</div>
+    <div>블록요소</div>
+  </div>
+
+  <hr>
+
+  <style>
+    .nav>li {
+      /* border: 1px solid black; */
+      display: inline-block;
+      width: 100px;
+      height: 50px;
+    }
+    .nav a{
+      /* border: 1px solid red; */
+      color: gray;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      /* vertical-align: middle; */
+    }
+      .nav a:hover {
+        background-color: black;
+        color: white;
+      }
+
+   </style>
+
+  <ul class="nav">
+    <Li><a href="">메뉴1</a></Li>
+    <Li><a href="">메뉴2</a></Li>
+    <Li><a href="">메뉴3</a></Li>
+    <Li><a href="">메뉴4</a></Li>
+    <Li><a href="">메뉴5</a></Li>
+  </ul>
+
+</body>
+</html>

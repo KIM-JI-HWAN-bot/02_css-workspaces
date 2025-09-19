@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--
+    ‼️ Box 기본 구조
+    ┌-------------------------------------┐
+    |           margin(외부여백)          |
+    |  ┌-------------------------------┐  |
+    |  |        border(테두리)         |  |
+    |  |  ┌-------------------------┐  |  |
+    |  |  |     padding(내부여백)   |  |  |
+    |  |  |  ┌-------------------┐  |  |  |
+    |  |  |  |  content(내용물)  |  |  |  |
+    |  |  |  └-------------------┘  |  |  |
+    |  |  └-------------------------┘  |  |
+    |  └-------------------------------┘  |
+    └-------------------------------------┘
+
+    한 요소의 전체 크기는 content + padding + border을 합산한 사이즈이다.
+
+    📌 CSS 박스 모델 관련 스타일 속성
+    1. width, height
+      1) 콘텐츠의 너비와 높이를 지정하는 속성입니다.
+      2) px, % 등의 단위를 사용합니다. (%는 부모 요소의 크기를 기준으로)
+      3) 인라인 요소는 크기를 지정할 수 없습니다.
+    2. border
+      1) 테두리의 두께, 종류, 색상을 지정하는 속성입니다.
+      2) 테두리의 두께는 기본적으로 box 크기에 영향을 미칩니다.
+      4) 종류 : solid, dotted, dashed, double, groove, ridge, inset, outset 등
+    3. padding
+      1) 콘텐츠와 테두리 사이의 내부 여백을 지정하는 속성입니다.
+      2) px, % 등의 단위를 사용합니다.
+      3) 내부 여백은 기본적으로 box 크기에 영향을 미칩니다.
+    4. margin
+      1) 테두리 바깥쪽 여백을 지정하는 속성입니다.
+      2) 타 요소간의 간격을 띄우고자할 때 주로 사용
+      3) 외부 여백은 기본적으로 box 크기에 영향을 미치지 않습니다.
+    5. box-sizing
+      1) 요소의 크기 계산 방식을 지정하는 속성입니다.
+      2) content-box, padding-box, border-box 등의 값을 사용합니다.
+  -->
+
+    <style>
+      .lap1 * {
+        background-color: pink;
+      }
+      .lap1 > div {
+        /* 너비 */
+        width: 100px;
+        /* 높이 */
+        height: 100px;
+      }
+      .lap1 > span {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+      
+<div class="lap1">
+  <div>블럭요소</div>
+  <br>
+  <span>인라인요소</span>
+</div>
+
+  <hr>
+
+  <!-- 
+    * border (테두리) 관련 스타일
+    1) border[-위치]-width  : 테두리 두께
+    2) border[-위치]-style  : 테두리 종류
+    3) border[-위치]-color  : 테두리 색상
+    4) border[-상하위치][-좌우위치]-radius : 테두리 모서리
+    5) border[-위치] : 테두리 두께, 종류, 색상을 한꺼번에 지정 (단축속성)
+  -->
+
+    <style>
+      .lap2>div {
+        /* width,height는 기본적으로 content영역의 사이즈 */
+        width: 100px;
+        height: 100px;
+        background-color: lightgreen;
+        margin-bottom: 10px; ;
+      }
+      .lap2> .box1 {
+        border-style: solid;
+        border-width: 5px;
+        border-color: red;
+        border-radius: 30px;
+      }
+      .lap2> .box2 {
+        border-style: solid dashed; /* 상하 좌우 */
+        border-style: dotted solid dashed;  
+        border-style: solid dashed dotted double; /* 위에서부터 시계방향 */
+        border-radius: 30px 10px 20px 40px;
+      }
+      .lap2> .box3 {
+        border-top-style: solid;
+        border-bottom-style: dashed;
+        border-top-width: 10px;
+        border-top-left-radius: 20px;
+      }
+      .lap2> .box4 {
+        border: 3px solid black;
+        /* box-shadow: 가로거리 세로거리 흐림정도 번짐정도 색 */
+        box-shadow: 5px 5px 5px 10px rebeccapurple;
+      }
+    </style>
+
+  <div class="lap2">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+  </div>
+
+  <button style="border: none;">로그인</button>
+
+  <hr>
+
+  <!-- 
+    * padding (내부여백) 관련 스타일
+    padding[-위치] : 안쪽 여백으로 지정할 값
+  -->
+  
+  <style>
+    .lap3>div{
+      width: 100px;
+      height: 100px;
+      border: 10px solid gray;
+      margin-bottom: 10px
+    }
+    .lap3>.box1 {
+      padding-top: 5px;
+      padding-left: 20px;
+      padding-right: 30px;
+      padding-bottom: 15px;
+    }
+    .lap3>.box2 {
+      padding: 10px
+    }
+    .lap3>.box3 {
+      padding: 10px 20px;
+      padding: 5px 10px 15px 20px;
+    }
+  </style>
+
+
+  <div class="lap3">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+  </div>
+
+  <hr>
+
+  <!-- 
+    * box-sizing (크기 계산 방식) 관련 스타일
+    1) box-sizing:content-box;
+        → 기본값
+        → width와 height가 콘텐츠(content)까지의 범위를 의미
+        → box 크기 = width/height + padding + border
+    2) box-sizing:padding-box;
+        → width와 height가 내부여백(padding)까지의 범위를 의미
+        → box 크기 = width/height + border
+    3) box-sizing:border-box;
+        → width와 height가 테두리(border)까지의 범위를 의미
+        → box 크기 = width/height
+  -->
+
+    <style>
+      .lap4>.box1 {
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        border: 10px solid gray;
+        padding: 10px;
+      }
+    </style>
+
+  <div class="lap4">
+    <div class="box1">box1</div>
+  </div>
+
+  <hr>
+  
+  <!-- 
+      * margin (외부 여백) 관련 스타일
+      1) 테두리 바깥쪽 공간을 의미하며 box 사이즈와는 상관없음
+      2) 타 요소간의 간격을 띄우고자할 때 주로 사용
+      3) 주요 스타일 속성
+          → margin[-위치] : 외부 여백으로 지정할 값
+  -->
+
+  <style>
+    .lap5 {border: 1px solid black;}
+    .lap5>div {border: 1px solid gray;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+  }
+  .lap5>.box1 {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 100px;   
+  }
+  .lap5>.box2 {
+    margin: 50px;
+    margin: 10px 30px;
+  }
+  .lap5>.box3 {
+    margin: 20px auto;
+  }
+  </style>
+
+
+  <div class="lap5">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+  </div>
+  <hr>
+
+  <style>
+    .test {
+      width: 100px;
+      height: 100px;
+      border: 1p solid gray;
+      overflow: scroll;
+    }
+  </style>
+  
+
+  <div class="test">
+가아조띨 치여는 어아로 하긱셍연의 와우다 무쿨흘 브닌억구나. 데븡이귬같이 골스어눠가 디났하네안아도 이디아히의 가가자강의 례절딜랑의 돈맨과 모힁하히가. 놜돠아채어요 으긴성괴에타도 에에새바를, 기골댄랍을 자깅텬은 슸갈 마 쳐아에 랜가고서 억쟈. 겐은머산을 대라다 베즈닐, 창아룽윽 다충킈이다 연래닌 르림고 후나윈을까. 곤지흐오소를 흔뉭던 연썬헤 기항이릴라 오돌즈노가 박나쟈아토, 자곤우낚지마는 이애츠뚜 갈저라 이앙다 즈르루섭의. 닷띠보나 가오혼 나나후를 태돕 셜념은가. 워덴다 녀닏잉어로 게던전구는 나감이요 굴할아 솔지루의. 된거흥란던 대니야는 은솜까지 튼내는 께재다 벌젝아시바나. 사좌멍과 조윤을 려리잔 오커, 안힌드에서. 
+
+줘렙압샐 댚말 겼네세타는 처즌안오는데 즌궜르다 할듬믕사를 휘건폰므귱부터 뎨이초까지 우힁더악의 어믈스졌거든. 니으섭으로 듔두여너의 알같으라 논냇뭔다 자떠륭벼는가 잆디제 일함고 드미궁혔욘음겔늣다, 늠르압하. 닝을 에머헙메 넹리우셌구라 으야 마안아료 쳐터시얕좀아야 아으덕촌오실부터. 할스빈친는 댕스닸음 버오의 흐겨가 우헴허릭의. 노새 싱툰줘준븡 탕지시구 브옴, 도사함이 느인이 더의덦자. 셀뎡마집봅솨의 날퇀갸의 일가에 나민선도 보흐샹의 헹아노지가 곤족쇤삼이 악이콕흠이나닝리읍으라 가티으지만 돤유아삐에게 낙낸힌. 쟝놈잉후면 다들어 히딤랜가고, 너잾안잘질온 뮨장안르의 개므를 곤응렬오가 자소여기가 둥헤 뎁긴다. 신뎝스 강다밀츤, 둬증다 린더카슨는다 아히례의 안드사 츠흐깋. 녀콩은 라벳둘 론즈는 갸츨이다 안디호긴닙니다. 
+
+홈애혀놀 나즈는 말임나로, 올대 안우붜인은 마압구횻. 딸앤고수냐 균어잠으로 춨능은 암가게 난저카가고, 바놉자 빈바안어 오트구젠순으라 앵텨가 합효. 드힌어서 스아끘몄은 잠히흔호를 응낭에, 대어의 힞노암굶굴뎌게 졍누뱌의 잠습어지오와 시앵노람을, 션익센아가. 응자를 알러군소에 터애마숴으가 이른게 타낸사를 두어 거젼털, 용넝봍는 산가쥴좁으며 킨흡을 꾸자. 길링소의 리투추아가 신학페헌뱌고 허론티션 걸잴디라옹지 메져인이사기와 제로지댜아 웝미일사챙는 듼가디다타에 미열요자를 젱느다. 맛벤쵀준을 셔 앙기는 잘디그짬허몰온들 운얄라달에 난믄새붱이며 베믕가안 간까암넜에요 이다데와구져는 느힌르토다 타바에서. 느순석스 언며만 몰마안 뚱재처뎌의 은믄도엉는 트핐은 굫걸디온니는 이이납 드궉다 혓간드로다.
+
+  </div>
+
+
+  
+</body>
+</html>
