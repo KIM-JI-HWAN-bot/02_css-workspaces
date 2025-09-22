@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {box-sizing: border-box;}
+  body, * {margin: 0;}
+
+  /* div {border: 1px solid #aaa;} */
+
+  .app {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .hed, .foot {
+    background-color: #222;
+    color: #fff;
+    padding: 16px;
+  }
+  .body {
+    flex: 1;
+    background-color: #f0eaea;
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+  }
+  .nav {
+    width: 200px;
+    padding: 12px;
+    background-color: #f9fafb;
+  }
+  .aside {
+    width: 200px;
+    padding: 12px;
+    background-color: #f9fafb;
+  }
+  .main {
+    flex: 1;
+    padding: 16px;
+    background-color: #ffffff;
+  }
+  .bady > * {
+    border: 1px solid #e5e7ed;
+  }
+
+  .box {
+    background-color: rgb(205, 237, 249);
+    border: 1px dashed rgb(75, 144, 171);
+    margin: 12px 0px;
+    padding: 12px;
+  }
+  .nav ul {
+    padding-left: 20px;
+    margin-top: 8px;
+    }
+    .aside P {
+      margin-top: 8px;
+    }
+</style>
+<body>
+  
+
+  <div class="app">
+
+    <div class="hed">
+      머리부(header)
+    </div>
+
+    <div class="body">
+      <div class="nav">
+        <strong>네비게이션(Nav)</strong>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <h1>메인 콘텐츠(Main)</h1>
+        <div class="box">양 옆은 고정폭, 가로는 가변폭!</div>
+        <p>Hint. 가운데 영역은 <code>flex: 1</code>로 남는 공간을 차지합니다.</p>
+      </div>
+
+      <div class="aside">
+        <strong>사이드바(Aside)</strong>
+        <p>공지/광고/프로필 등</p>
+      </div>
+
+    </div>
+
+    <div class="foot">
+      바닥부(Footer)
+    </div>
+
+  </div>
+
+</body>
+</html>

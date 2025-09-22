@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {box-sizing: border-box;}
+  body, * {margin: 0;}
+
+  /* div {border: 1px solid #aaa;} */
+
+  .app {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .hed, .foot {
+    background-color: #222;
+    color: #fff;
+    padding: 16px;
+  }
+  .body {
+    flex: 1;
+    background-color: #f0eaea;
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+  }
+  .nav {
+    width: 200px;
+    padding: 12px;
+    background-color: #f9fafb;
+  }
+  .aside {
+    width: 200px;
+    padding: 12px;
+    background-color: #f9fafb;
+  }
+  .main {
+    flex: 1;
+    padding: 16px;
+    background-color: #ffffff;
+  }
+  .content > * {
+    border: 1px solid #e5e7ed;
+  }
+
+  .box {
+    background-color: rgb(205, 237, 249);
+    border: 1px dashed rgb(75, 144, 171);
+    margin: 12px 0px;
+    padding: 12px;
+  }
+  .nav ul {
+    padding-left: 20px;
+    margin-top: 8px;
+    }
+    .aside P {
+      margin-top: 8px;
+    }
+</style>
+<body>
+  
+  <!-- 
+	📌 Semantic 태그란?
+  1) 의미(의도, 역할)를 명확하게 전달하는 HTML 태그입니다.
+  2) 예시: <header>, <nav>, <main>, <aside>, <footer>, <section>, <article> 등
+  3) 목적
+      → 웹 접근성 향상 (스크린리더 등 보조기기에서 구조를 이해하기 쉬움)
+      → 코드의 가독성 및 유지보수성 향상
+      → 검색 엔진 최적화(SEO)에 도움
+      → 웹 표준 준수
+  4) 주요 종류
+      → <header>   : 문서/섹션의 머리말(로고, 내비게이션 등)
+      → <nav>      : 주요 내비게이션 링크 영역
+      → <main>     : 문서의 주요 콘텐츠(핵심 내용)
+      → <aside>    : 부가 정보(광고, 프로필, 관련 링크 등)
+      → <footer>   : 문서/섹션의 바닥글(저작권, 연락처 등)
+      → <section>  : 주제별 구분 영역
+      → <article>  : 독립적인 콘텐츠(게시글, 뉴스 등)
+  5) 시맨틱 태그를 사용하면 div, span 등 비의미적 태그보다 구조와 의미가 명확해집니다.
+-->
+
+  <div class="app">
+
+    <header class="header">
+      머리부(header)
+    </header>
+
+    <div class="content">
+      <nav class="nav">
+        <strong>네비게이션(Nav)</strong>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+
+      <main class="main">
+        <h1>메인 콘텐츠(Main)</h1>
+        <div class="box">양 옆은 고정폭, 가로는 가변폭!</div>
+        <p>Hint. 가운데 영역은 <code>flex: 1</code>로 남는 공간을 차지합니다.</p>
+      </main>
+
+      <aside class="aside">
+        <strong>사이드바(Aside)</strong>
+        <p>공지/광고/프로필 등</p>
+      </aside>
+
+    </div>
+
+    <footer class="foot">
+      바닥부(Footer)
+    </footer>
+
+  </div>
+
+</body>
+</html>
