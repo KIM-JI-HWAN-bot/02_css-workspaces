@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .gugudan {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    </style>
+
+    <script>
+      /**
+       * 구구단 결과물 .gugudan div에 추가합니다.
+       * @param {string} calcResult - 표시할 구구단 계산 결과
+       * @returns {Element} - 구구단 Element(요소)
+       */
+      function gugudanItem(calcResult) {
+        const gugudanDiv = document.querySelector(".gugudan");
+        const item = document.createElement("div");
+
+        item.textContent = calcResult;
+
+        gugudanDiv.appendChild(item);
+      }
+
+      window.onload = function () {
+        // 구구단의 'n단'의 정보를 담는 변수
+        // let gugudanStep = 2;
+
+        /*
+      	:: README ::
+      	종원이는 선생님이 타이핑으로 구구단 차트를 만드는 모습을 보고
+      	너무 안쓰러워 최첨단 구구단 작성 프로그램을 만들어주기로 했다.
+      	다음 `gugudanItem` 함수와 `for`문을 사용하여 이용하여 구구단을 표현해보자!
+      	1. `for`문을 사용하여 2단을 표현해보자.
+      	2. `for`문을 중첩(for { for { ... } })하여 2단 ~ 9단의 구구단을 한꺼번에 표현해보자.
+      	for문 기본 문법
+      		* for (let i = 0; i <= 10; i++) { ... }
+      		* `let i` => 초기화 값
+      		* `i <= 10` => i 변수가 10 이하이거나 같을 때
+      		* `i++` => i의 변수를 1 올린다. (`i += 1`, `i += 2` 도 가능)
+      		* 변수 사용 방법 => gugudanItem(i). i는 처음 선언한 i의 변수와 이름이 같게 되어야 한다.
+      */
+
+        /////////////
+        // :: SOLVEME ::
+        // 3 - 13까지 홀수만 나오도록 gugudanItem 함수 사용해서
+        // 12 - 2 까지 짝수만 나오도록
+
+        // for (let i = 3; i <= 13; i += 2) {
+        //   gugudanItem(i);
+        // }
+        // for (let i = 12; i >= 2; i -= 2) {
+        //   gugudanItem(i);
+        // }
+
+        // for(/* 몇단을 인지 돌림 2단, 3단...*/){
+        //   for( /* 그 단의 구구단을 돌림 2단 : 2x1=2 ....*/){
+
+        //   }
+        // }
+
+        // 1 : 1 2 3 4 5 6
+        // 2 : 1 2 3 4 5 6
+        // 3 : 1 2 3 4 5 6
+        // 4 : 1 2 3 4 5 6
+        // 5 : 1 2 3 4 5 6
+
+        // for (let i = 2; i <= 5; i++) {
+        //   gugudanItem(`${i} :`);
+        //   for (let j = 1; j <= 6; j++) {
+        //     gugudanItem(`${j}`);
+        //   }
+        // }
+
+        const gugudanStep = 2;
+
+        // for(let n = gugudanStep;)
+
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+
+        let star = "";
+
+        for (let i = 5; i >= 1; i--) {
+          for (let j = 1; j <= i; j++) {
+            star += " ";
+          }
+
+          for (let ii = i; ii <= 5; ii++) {
+            star += "*";
+          }
+
+          star += "\n";
+        }
+        // for (let i = 1; i <= 5; i++) {
+        //   for (let j = 5; j >= i; j--) {
+        //     star += " ";
+        //   }
+
+        //   for (let ii = 1; ii <= i; ii++) {
+        //     star += "*";
+        //   }
+
+        //   star += "\n";
+        // }
+
+        // for (let i = 5; i >= 1; i--) {
+        //   star += " ";
+
+        //   for (let j = 1; j <= i; j++) {
+        //     star += "*";
+        //   }
+        //   star += "\n";
+        // }
+        console.log(star);
+
+        // for (let i = 5; i <= 1; i -= 1) {
+        //   let text = " ";
+        //   for (let j = 0; j <= 5; j += 1) {
+        //     text += "*";
+        //   }
+        //   gugudanItem(text);
+        // }
+
+        for (let i = gugudanStep; i <= 9; i++) {
+          gugudanItem(`${i}단`);
+          for (let j = 2; j <= 9; j++) {
+            gugudanItem(`${i}x${j}=${i * j}`);
+          }
+        }
+
+        gugudanItem(`${gugudanStep}단`);
+        for (let i = 2; i <= 9; i++) {
+          gugudanItem(`${gugudanStep}x${i}=${gugudanStep * i}`);
+        }
+
+        // gugudanItem(`2x2=${gugudanStep * 2}`);
+        // gugudanItem(`2x3=${gugudanStep * 3}`);
+        // gugudanItem(`.`);
+        // gugudanItem(`.`);
+        // gugudanItem(`.`);
+        // gugudanItem(`2x9=${gugudanStep * 9}`);
+
+        /////////////
+      };
+    </script>
+  </head>
+  <body>
+    <div class="gugudan"></div>
+  </body>
+</html>
